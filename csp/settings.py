@@ -167,7 +167,7 @@ GRAPH_MODELS = {
     'group_models': True,
 }
 
-if float(django.get_version()) < 1.8:
+if float(django.get_version()[0:3]) < 1.8:
     FIXTURE_DIRS = (
         os.path.join(BASE_DIR, 'fixtures')
     )
@@ -261,7 +261,7 @@ class SuppressDeprecated(logging.Filter):
         warnings = [
             'RemovedInDjango18Warning',
             'RemovedInDjango19Warning',
-            'RemovedInDjango110Warning',
+            'RemovedInDjango110Warning:',
         ]
 
         # Return false to suppress message.
